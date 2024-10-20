@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h2 {
+    padding: 15px 5px;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.main-header {
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+#content {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 6px;
+}
+li {
+    list-style: none;
+    padding-top: 10px;
+}
+a[href^="#"] {
+    color: #fffcfc;
+    text-decoration: none;
+}
+
+p{
+    color: black;
+}
+#content p {
+    color: blue;
+}
+
+#flex-example {
+    margin: 15px;
+}
+.flex-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center; /* Menambahkan justify-content untuk merapikan */
+}
+.box {
+    background-color: #333;
+    display: flex;
+    color: #f4f4f4;
+    padding: 20px;
+    width: 200px;
+    height: 100px;
+    justify-content: center;
+    flex: 1 1 200px;
+    border-radius: 10px;
+    align-items: center;
+}
+#grid-example {
+    margin: 15px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.grid-item {
+    background-color: #333;
+    color: aliceblue;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px ;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #333;
+    color: #f4f4f4;
+    margin: 5px;
+}
+
+footer {
+    text-align: center;
+}
+
+/* Media Query untuk layar di bawah 1200px */
+@media (max-width: 1200px) {
+    .flex-container {
+        gap: 20px;
+        justify-content: space-between;
+    }
+    .box {
+        width: 250px;
+        flex: 1 1 250px; /* Memastikan box tetap fleksibel */
+    }
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Membuat 3 kolom untuk grid */
+    }
+}
+
+/* Media Query untuk layar di bawah 768px, menjadi 2 kolom */
+@media (max-width: 768px) {
+    .flex-container {
+        flex-direction: row; /* Tetap horizontal, bukan kolom */
+        flex-wrap: wrap;
+    }
+    .box {
+        width: 45%; /* Agar ada 2 box per baris */
+        flex: 1 1 45%;
+    }
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk grid */
+    }
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Media Query untuk layar di bawah 480px */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    .box {
+        padding: 10px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 2 kolom untuk grid */
+    }
+}

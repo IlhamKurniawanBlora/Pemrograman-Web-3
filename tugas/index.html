@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Praktikum Web 3</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header class="main-header">
+        <h1>
+            Praktikum Website 3 | CSS
+        </h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tentang</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="content">
+        <h2>
+            Konsep CSS Dasar
+        </h2>
+        <p>Ini adalah contoh penggunaan Selector pada CSS</p>
+    </section>
+
+    <section id="flex-example">
+        <h2>layout menggunakan display Flexbox</h2>
+        <button id="addBoxButton">Tambah Box Item</button>
+        <div class="flex-container" id="flexContainer">
+
+            <div class="box">Content 1</div>
+            <div class="box">Content 2</div>
+
+        </div>
+    </section>
+    
+    <section id="grid-example">
+        <h2>Laayout menggunakan display grid</h2>
+        <button id="addGridItems">Tambah Grid Item</button>
+        <div class="grid-container" id="gridContainer">
+
+            <div class="grid-item">Content 1</div>
+            <div class="grid-item">Content 2</div>
+          
+        </div>
+    </section>
+    <footer>
+        <p>
+            &copy: 2024 Ilham Kurniawan
+        </p>
+    </footer>
+    <script>
+        const flexBox = document.getElementById("flexContainer");
+        const addBoxButton = document.getElementById("addBoxButton");
+        let boxCount = 2;
+
+        addBoxButton.addEventListener("click", function() {
+            boxCount++; 
+
+            const newBox = document.createElement("div");
+            newBox.classList.add("box");
+            newBox.textContent = `Content ${boxCount}`; 
+            flexBox.appendChild(newBox);
+
+            newBox.addEventListener("click", function() {
+                flexBox.removeChild(this);
+                boxCount--; 
+            });
+        });
+
+        const gridBox = document.getElementById("gridContainer");
+        const addGridItems = document.getElementById("addGridItems");
+        let gridCount = 2;
+
+        addGridItems.addEventListener("click", function() {
+            gridCount++;
+
+            const newGrid = document.createElement("div");
+            newGrid.classList.add("grid-item");
+            newGrid.textContent = `Content ${gridCount}`;
+            gridBox.appendChild(newGrid);
+
+            newGrid.addEventListener("click", function() {
+                gridBox.removeChild(this);
+                boxCount--;
+            })
+        });
+
+    </script>
+</body>
+</html>
